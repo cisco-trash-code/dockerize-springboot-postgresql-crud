@@ -1,1 +1,1 @@
-# Dockerize (Spring Boot + PostgreSQL) CRUD application
+# Dockerize (Spring Boot + MySQL) CRUD application
