@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  app:
+    image: crud:latest
+    container_name: crud-container
+    ports:
+      - "8082:8082"
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://localhost:3306/football?createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=cisco
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+
+  db:
+    image: mysql:latest
+    container_name: mysql-container
+    environment:
+      - MYSQL_DATABASE=football
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=cisco
+      - MYSQL_ROOT_PASSWORD=cisco
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+volumes:
+  mysql-data:
