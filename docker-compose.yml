@@ -9,7 +9,7 @@ services:
     depends_on:
       - db
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:mysql://localhost:3306/football?createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/football
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=cisco
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
@@ -20,7 +20,7 @@ services:
     environment:
       - MYSQL_DATABASE=football
       - MYSQL_USER=root
-      - MYSQL_PASSWORD=cisco
+#      - MYSQL_PASSWORD=cisco
       - MYSQL_ROOT_PASSWORD=cisco
     ports:
       - "3306:3306"
