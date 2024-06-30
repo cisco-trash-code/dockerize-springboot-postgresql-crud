@@ -1,1 +1,0 @@
-# Dockerize (Spring Boot + MySQL) CRUD application
